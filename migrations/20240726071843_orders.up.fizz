@@ -1,0 +1,24 @@
+create_table("orders") {
+    t.Column("id", "integer", {primary: true})
+    t.Column("client_name", "string", {"default": ""})
+    t.Column("client_mobile", "string", {"default": ""})
+    t.Column("location_id", "integer", {})
+    t.Column("area", "string", {"default": ""})
+    t.Column("date", "string", {"default": ""})
+    t.Column("preferred_time", "string", {"default": ""})
+    t.Column("service_id", "integer", {})
+    t.Column("problem_summary", "string", {"default": ""})
+    t.Column("attachment", "string", {"default": ""})
+    t.Column("created_at", "timestamptz", {})
+    t.Column("updated_at", "timestamptz", {})
+    t.ForeignKey("location_id", {"locations": ["id"]}, {
+        "on_delete": "cascade",
+        "on_update": "cascade",
+    })
+    t.ForeignKey("service_id", {"services": ["id"]}, {
+        "on_delete": "cascade",
+        "on_update": "cascade",
+    })
+
+}
+

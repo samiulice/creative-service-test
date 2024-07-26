@@ -1,0 +1,59 @@
+{{template "base" .}}
+
+
+{{define "title"}}
+Page Not Found
+{{end}}
+{{define "css"}}
+<style>
+
+    .pagenotfound {
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        animation: fadeIn 0.5s ease-out;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .pagenotfound h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: #333; /* Darker text color for headings */
+    }
+    .pagenotfound p {
+        font-size: 25px;
+        margin-bottom: 20px;
+        color: #003f1c; /* Slightly darker text color for paragraphs */
+    }
+   .pagenotfound a {
+        color: #0a06f0d3; /* Yellow link color */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .pagenotfound a:hover {
+        color: #05301bcc; /* Brighter yellow on hover */
+    }
+</style>
+{{end}}
+
+{{define "content"}}
+    
+    <div class="row">
+        <div class="pagenotfound">
+            <h1>404 - Page Not Found</h1>
+            The page you are looking for might have been removed, temporarily unavailable.
+            <br>
+            Please check the URL for proper spelling and capitalization. If you're still having trouble,
+            <a href="contact.html">contact us</a>.
+        </div>
+    </div>
+{{end}}
+
